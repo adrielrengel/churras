@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pedido_id: 
+  forma_pagamento_id: 
+  valor: 9.99
+  observacao: MyText
+  usuario_id: 
+
+two:
+  pedido_id: 
+  forma_pagamento_id: 
+  valor: 9.99
+  observacao: MyText
+  usuario_id: 

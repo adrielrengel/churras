@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Estoques</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Saida caixa</th>
+      <th>Produto</th>
+      <th>Quantidade comprada</th>
+      <th>Quantidade atual</th>
+      <th>Valor</th>
+      <th>Unidade</th>
+      <th>Fornecedor</th>
+      <th>Usuario</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @estoques.each do |estoque| %>
+      <tr>
+        <td><%= estoque.saida_caixa %></td>
+        <td><%= estoque.produto %></td>
+        <td><%= estoque.quantidade_comprada %></td>
+        <td><%= estoque.quantidade_atual %></td>
+        <td><%= estoque.valor %></td>
+        <td><%= estoque.unidade %></td>
+        <td><%= estoque.fornecedor %></td>
+        <td><%= estoque.usuario %></td>
+        <td><%= link_to 'Show', estoque %></td>
+        <td><%= link_to 'Edit', edit_estoque_path(estoque) %></td>
+        <td><%= link_to 'Destroy', estoque, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Estoque', new_estoque_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  funcionario_id: 
+  valor: 9.99
+  saida_caixa_id: 
+  usuario_id: 
+
+two:
+  funcionario_id: 
+  valor: 9.99
+  saida_caixa_id: 
+  usuario_id: 

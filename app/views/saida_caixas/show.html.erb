@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @saida_caixa.data %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @saida_caixa.tipo %>
+</p>
+
+<p>
+  <strong>Observacao:</strong>
+  <%= @saida_caixa.observacao %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @saida_caixa.usuario %>
+</p>
+
+<%= link_to 'Edit', edit_saida_caixa_path(@saida_caixa) %> |
+<%= link_to 'Back', saida_caixas_path %>

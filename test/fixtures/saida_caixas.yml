@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data: 2015-03-02 16:45:29
+  tipo: MyString
+  observacao: MyText
+  usuario_id: 
+
+two:
+  data: 2015-03-02 16:45:29
+  tipo: MyString
+  observacao: MyText
+  usuario_id: 

@@ -1,0 +1,23 @@
+// Place all the styles related to the mesas controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.mesa {
+	height: 150px;
+	margin-bottom: 20px;
+	color: #ffffff;
+	cursor: pointer;
+	padding: 20px;
+	text-align: center;
+	background: #A4A4A4;
+
+	&.ocupada {
+		background: #F11D1D;
+	}
+
+	&.livre {
+		background: #36DD31;
+	}
+}
+
+

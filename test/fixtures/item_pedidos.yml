@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  estoque_id: 
+  valor: 9.99
+  situacao: MyString
+  horario_pedido: 2015-03-02 16:55:47
+  pedido_id: 
+  usuario_id: 
+
+two:
+  estoque_id: 
+  valor: 9.99
+  situacao: MyString
+  horario_pedido: 2015-03-02 16:55:47
+  pedido_id: 
+  usuario_id: 

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cliente:</strong>
+  <%= @pessoa_juridica.cliente %>
+</p>
+
+<p>
+  <strong>Cnpj:</strong>
+  <%= @pessoa_juridica.cnpj %>
+</p>
+
+<p>
+  <strong>Razao social:</strong>
+  <%= @pessoa_juridica.razao_social %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @pessoa_juridica.usuario %>
+</p>
+
+<%= link_to 'Edit', edit_pessoa_juridica_path(@pessoa_juridica) %> |
+<%= link_to 'Back', pessoa_juridicas_path %>

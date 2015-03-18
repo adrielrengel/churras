@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cliente_id: 
+  cnpj: MyString
+  razao_social: MyString
+  usuario_id: 
+
+two:
+  cliente_id: 
+  cnpj: MyString
+  razao_social: MyString
+  usuario_id: 

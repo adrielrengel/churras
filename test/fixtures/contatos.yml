@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tipo_contato_id: 
+  contato: MyString
+  contatavel_id: 
+  contatavel_type: Contatavel
+  usuario_id: 
+
+two:
+  tipo_contato_id: 
+  contato: MyString
+  contatavel_id: 
+  contatavel_type: Contatavel
+  usuario_id: 

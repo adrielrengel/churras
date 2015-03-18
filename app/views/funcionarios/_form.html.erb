@@ -1,0 +1,43 @@
+<%= form_for(@funcionario) do |f| %>
+  <% if @funcionario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@funcionario.errors.count, "error") %> prohibited this funcionario from being saved:</h2>
+
+      <ul>
+      <% @funcionario.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pessoa_id %><br>
+    <%= f.text_field :pessoa_id %>
+  </div>
+  <div class="field">
+    <%= f.label :data_admissao %><br>
+    <%= f.datetime_select :data_admissao, :start_year => 1980 %>
+  </div>
+  <!--<div class="field">
+    <%= f.label :data_demissao %><br>
+    <%= f.datetime_select :data_demissao %>
+  </div>
+    Criar um botão de demisão e fazer com que esse campo receba a data em que foi realizado o clipe
+-->
+  <div class="field">
+    <%= f.label :salario_base %><br>
+    <%= f.text_field :salario_base %>
+  </div>
+  <div class="field">
+    <%= f.label :funcao_id %><br>
+    <%= f.text_field :funcao_id %>
+  </div>
+  <div class="field">
+    <%= f.label :usuario_id %><br>
+    <%= f.text_field :usuario_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Saida caixa:</strong>
+  <%= @estoque.saida_caixa %>
+</p>
+
+<p>
+  <strong>Produto:</strong>
+  <%= @estoque.produto %>
+</p>
+
+<p>
+  <strong>Quantidade comprada:</strong>
+  <%= @estoque.quantidade_comprada %>
+</p>
+
+<p>
+  <strong>Quantidade atual:</strong>
+  <%= @estoque.quantidade_atual %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @estoque.valor %>
+</p>
+
+<p>
+  <strong>Unidade:</strong>
+  <%= @estoque.unidade %>
+</p>
+
+<p>
+  <strong>Fornecedor:</strong>
+  <%= @estoque.fornecedor %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @estoque.usuario %>
+</p>
+
+<%= link_to 'Edit', edit_estoque_path(@estoque) %> |
+<%= link_to 'Back', estoques_path %>

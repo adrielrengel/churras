@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  saida_caixa_id: 
+  produto_id: 
+  quantidade_comprada: 1
+  quantidade_atual: 1
+  valor: 9.99
+  unidade_id: 
+  fornecedor_id: 
+  usuario_id: 
+
+two:
+  saida_caixa_id: 
+  produto_id: 
+  quantidade_comprada: 1
+  quantidade_atual: 1
+  valor: 9.99
+  unidade_id: 
+  fornecedor_id: 
+  usuario_id: 

@@ -1,0 +1,49 @@
+<%= form_for(@estoque) do |f| %>
+  <% if @estoque.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@estoque.errors.count, "error") %> prohibited this estoque from being saved:</h2>
+
+      <ul>
+      <% @estoque.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :saida_caixa_id %><br>
+    <%= f.text_field :saida_caixa_id %>
+  </div>
+  <div class="field">
+    <%= f.label :produto_id %><br>
+    <%= f.text_field :produto_id %>
+  </div>
+  <div class="field">
+    <%= f.label :quantidade_comprada %><br>
+    <%= f.number_field :quantidade_comprada %>
+  </div>
+  <div class="field">
+    <%= f.label :quantidade_atual %><br>
+    <%= f.number_field :quantidade_atual %>
+  </div>
+  <div class="field">
+    <%= f.label :valor %><br>
+    <%= f.text_field :valor %>
+  </div>
+  <div class="field">
+    <%= f.label :unidade_id %><br>
+    <%= f.text_field :unidade_id %>
+  </div>
+  <div class="field">
+    <%= f.label :fornecedor_id %><br>
+    <%= f.text_field :fornecedor_id %>
+  </div>
+  <div class="field">
+    <%= f.label :usuario_id %><br>
+    <%= f.text_field :usuario_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

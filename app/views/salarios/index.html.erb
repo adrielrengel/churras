@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Salarios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Funcionario</th>
+      <th>Valor</th>
+      <th>Saida caixa</th>
+      <th>Usuario</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @salarios.each do |salario| %>
+      <tr>
+        <td><%= salario.funcionario %></td>
+        <td><%= salario.valor %></td>
+        <td><%= salario.saida_caixa %></td>
+        <td><%= salario.usuario %></td>
+        <td><%= link_to 'Show', salario %></td>
+        <td><%= link_to 'Edit', edit_salario_path(salario) %></td>
+        <td><%= link_to 'Destroy', salario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Salario', new_salario_path %>

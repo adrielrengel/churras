@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pedido:</strong>
+  <%= @entrada_caixa.pedido %>
+</p>
+
+<p>
+  <strong>Forma pagamento:</strong>
+  <%= @entrada_caixa.forma_pagamento %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @entrada_caixa.valor %>
+</p>
+
+<p>
+  <strong>Observacao:</strong>
+  <%= @entrada_caixa.observacao %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @entrada_caixa.usuario %>
+</p>
+
+<%= link_to 'Edit', edit_entrada_caixa_path(@entrada_caixa) %> |
+<%= link_to 'Back', entradas_caixa_path %>

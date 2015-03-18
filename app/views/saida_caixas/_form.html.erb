@@ -1,0 +1,33 @@
+<%= form_for(@saida_caixa) do |f| %>
+  <% if @saida_caixa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@saida_caixa.errors.count, "error") %> prohibited this saida_caixa from being saved:</h2>
+
+      <ul>
+      <% @saida_caixa.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :data %><br>
+    <%= f.datetime_select :data %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo %><br>
+    <%= f.text_field :tipo %>
+  </div>
+  <div class="field">
+    <%= f.label :observacao %><br>
+    <%= f.text_area :observacao %>
+  </div>
+  <div class="field">
+    <%= f.label :usuario_id %><br>
+    <%= f.text_field :usuario_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

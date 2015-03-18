@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Entradas Caixa</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pedido</th>
+      <th>Forma pagamento</th>
+      <th>Valor</th>
+      <th>Observacao</th>
+      <th>Usuario</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entradas_caixa.each do |entrada_caixa| %>
+      <tr>
+        <td><%= entrada_caixa.pedido %></td>
+        <td><%= entrada_caixa.forma_pagamento %></td>
+        <td><%= entrada_caixa.valor %></td>
+        <td><%= entrada_caixa.observacao %></td>
+        <td><%= entrada_caixa.usuario %></td>
+        <td><%= link_to 'Show', entrada_caixa %></td>
+        <td><%= link_to 'Edit', edit_entrada_caixa_path(entrada_caixa) %></td>
+        <td><%= link_to 'Destroy', entrada_caixa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Entrada caixa', new_entrada_caixa_path %>

@@ -1,0 +1,19 @@
+<% content_for :navbar do %>
+<li><%= link_to raw('<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Adicionar'), adicionar_mesas_path, method: :patch %>
+</li>
+<li><%= link_to raw('<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Excluir'), excluir_mesas_path, method: :patch %></li>
+<% end %>
+<div class="row">
+	<% @mesas.each do |mesa| %>
+	<div class="col-md-2 col-sm-3 col-xs-6">
+		<div class="mesa <%= mesa.situacao %>">
+			<h2><%= mesa.id %></h2>
+			<p><%= mesa.situacao %></p>
+		</div>
+	</div>
+	<% end %>
+</div>
+
+
+
+

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @rua.nome %>
+</p>
+
+<p>
+  <strong>Cidade:</strong>
+  <%= @rua.cidade %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @rua.usuario %>
+</p>
+
+<%= link_to 'Edit', edit_rua_path(@rua) %> |
+<%= link_to 'Back', ruas_path %>
