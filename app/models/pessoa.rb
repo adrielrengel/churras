@@ -2,6 +2,8 @@ class Pessoa < ActiveRecord::Base
   belongs_to :endereco
   belongs_to :usuario
   accepts_nested_attributes_for :endereco
+  #accepts_nested_attributes_for :pessoa_fisica
+  #accepts_nested_attributes_for :pessoa_juridica
 
 
 

@@ -183,18 +183,18 @@ ActiveRecord::Schema.define(version: 20150302200240) do
   add_index "pedidos", ["usuario_id"], name: "index_pedidos_on_usuario_id", using: :btree
 
   create_table "pessoa_fisicas", force: :cascade do |t|
-    t.integer  "cliente_id", limit: 4
+    t.integer  "pessoa_id",  limit: 4
     t.string   "cpf",        limit: 11
     t.integer  "usuario_id", limit: 4
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
   end
 
-  add_index "pessoa_fisicas", ["cliente_id"], name: "index_pessoa_fisicas_on_cliente_id", using: :btree
+  add_index "pessoa_fisicas", ["pessoa_id"], name: "index_pessoa_fisicas_on_pessoa_id", using: :btree
   add_index "pessoa_fisicas", ["usuario_id"], name: "index_pessoa_fisicas_on_usuario_id", using: :btree
 
   create_table "pessoa_juridicas", force: :cascade do |t|
-    t.integer  "cliente_id",   limit: 4
+    t.integer  "pessoa_id",    limit: 4
     t.string   "cnpj",         limit: 14
     t.string   "razao_social", limit: 80
     t.integer  "usuario_id",   limit: 4
@@ -202,7 +202,7 @@ ActiveRecord::Schema.define(version: 20150302200240) do
     t.datetime "updated_at",              null: false
   end
 
-  add_index "pessoa_juridicas", ["cliente_id"], name: "index_pessoa_juridicas_on_cliente_id", using: :btree
+  add_index "pessoa_juridicas", ["pessoa_id"], name: "index_pessoa_juridicas_on_pessoa_id", using: :btree
   add_index "pessoa_juridicas", ["usuario_id"], name: "index_pessoa_juridicas_on_usuario_id", using: :btree
 
   create_table "pessoas", force: :cascade do |t|
@@ -318,9 +318,9 @@ ActiveRecord::Schema.define(version: 20150302200240) do
   add_foreign_key "pedidos", "clientes"
   add_foreign_key "pedidos", "mesas"
   add_foreign_key "pedidos", "usuarios"
-  add_foreign_key "pessoa_fisicas", "clientes"
+  add_foreign_key "pessoa_fisicas", "pessoas"
   add_foreign_key "pessoa_fisicas", "usuarios"
-  add_foreign_key "pessoa_juridicas", "clientes"
+  add_foreign_key "pessoa_juridicas", "pessoas"
   add_foreign_key "pessoa_juridicas", "usuarios"
   add_foreign_key "pessoas", "enderecos"
   add_foreign_key "pessoas", "usuarios"
