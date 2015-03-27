@@ -11,31 +11,31 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :pessoa_id %><br>
-    <%= f.text_field :pessoa_id %>
+  <div class="field form-group">
+    <%= f.label :pessoa_id %>
+    <%= f.text_field :pessoa_id,  class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :data_admissao %><br>
-    <%= f.datetime_select :data_admissao, :start_year => 1980 %>
+  <div class="field form-group">
+     <%= f.label :data_admissao %><br>
+    <%= f.datetime_select :data_admissao, :start_year => 1980,  class: "form-control" %>
   </div>
-  <!--<div class="field">
+  <!--<div class="field form-group">
     <%= f.label :data_demissao %><br>
     <%= f.datetime_select :data_demissao %>
   </div>
     Criar um botão de demisão e fazer com que esse campo receba a data em que foi realizado o clipe
 -->
-  <div class="field">
-    <%= f.label :salario_base %><br>
-    <%= f.text_field :salario_base %>
+  <div class="field form-group">
+     <%= f.label :salario_base %>
+    <%= f.text_field :salario_base, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :funcao_id %><br>
-    <%= f.text_field :funcao_id %>
+  <div class="field form-group">
+     <%= f.label :funcao_id %>
+    <%= f.text_field :funcao_id,  class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :usuario_id %><br>
-    <%= f.text_field :usuario_id %>
+  <div class="field form-group">
+     <%= f.label :usuario_id %>
+    <%= f.text_field :usuario_id,  class: "form-control" %>
   </div>
   <div class="actions">
     <%= f.submit %>

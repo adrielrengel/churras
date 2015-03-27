@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150302200240) do
+ActiveRecord::Schema.define(version: 20150326193245) do
+
+  create_table "bairros", force: :cascade do |t|
+    t.string  "nome",       limit: 255
+    t.integer "usuario_id", limit: 4
+  end
+
+  add_index "bairros", ["usuario_id"], name: "index_bairros_on_usuario_id", using: :btree
 
   create_table "categoria_produtos", force: :cascade do |t|
     t.string   "nome",       limit: 20
@@ -32,10 +39,9 @@ ActiveRecord::Schema.define(version: 20150302200240) do
 
   create_table "clientes", force: :cascade do |t|
     t.integer  "pessoa_id",  limit: 4
-    t.string   "tipo",       limit: 20
     t.integer  "usuario_id", limit: 4
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
   add_index "clientes", ["pessoa_id"], name: "index_clientes_on_pessoa_id", using: :btree
@@ -58,10 +64,12 @@ ActiveRecord::Schema.define(version: 20150302200240) do
   create_table "enderecos", force: :cascade do |t|
     t.integer  "rua_id",      limit: 4
     t.string   "numero",      limit: 10
+    t.string   "cep",         limit: 255
     t.string   "complemento", limit: 80
+    t.string   "bairro",      limit: 255
     t.integer  "usuario_id",  limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   add_index "enderecos", ["rua_id"], name: "index_enderecos_on_rua_id", using: :btree
@@ -210,8 +218,9 @@ ActiveRecord::Schema.define(version: 20150302200240) do
     t.integer  "endereco_id", limit: 4
     t.string   "situacao",    limit: 20
     t.integer  "usuario_id",  limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "tipo",        limit: 255
   end
 
   add_index "pessoas", ["endereco_id"], name: "index_pessoas_on_endereco_id", using: :btree
@@ -291,6 +300,7 @@ ActiveRecord::Schema.define(version: 20150302200240) do
     t.datetime "updated_at",             null: false
   end
 
+  add_foreign_key "bairros", "usuarios"
   add_foreign_key "categoria_produtos", "usuarios"
   add_foreign_key "clientes", "pessoas"
   add_foreign_key "clientes", "usuarios"

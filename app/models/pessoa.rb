@@ -1,13 +1,23 @@
 class Pessoa < ActiveRecord::Base
   belongs_to :endereco
   belongs_to :usuario
+  has_one :pessoa_juridica
+  has_one :pessoa_fisica
+  
   accepts_nested_attributes_for :endereco
-  #accepts_nested_attributes_for :pessoa_fisica
-  #accepts_nested_attributes_for :pessoa_juridica
+  accepts_nested_attributes_for :pessoa_fisica
+  accepts_nested_attributes_for :pessoa_juridica, reject_if: proc { |attributes| attributes['tipo'] == 'Pessoa Fisica' }
 
 
+  has_one :cliente
 
-   def pessoa_nome
+  #Validações
+  validates :nome, presence: true
+  validates :tipo, presence: true
+
+ 
+
+  def pessoa_nome
   	pessoa.nome
   end
 

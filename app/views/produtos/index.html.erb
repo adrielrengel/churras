@@ -15,19 +15,22 @@
     </tr>
   </thead>
 
+  <%#= produto.usuario.blank? ? 'Usuário não encontrado' : produto.usuario.nome %>
+
+
   <tbody>
     <% @produtos.each do |produto| %>
       <tr>
-        <td><%= produto.nome %></td>
+        <td><%= produto.nome  %></td>
         <td><%= produto.valor %></td>
-        <td><%= produto.categoria_produto_nome %></td>
+        <td><%= produto.categoria_produto_nome rescue 'Categoria não encontrado' %></td>
         <td><%= produto.unidade_nome %></td>
         <td><%= produto.situacao%></td>
-        <td><%= produto.usuario_nome%></td>
+        <td><%= produto.usuario.nome rescue 'Usuário não encontrado' %></td>
         <td><%= link_to 'Exibir', produto %></td>
         <td><%= link_to 'Editar', edit_produto_path(produto) %></td>
         <td><%= link_to 'Excluir', produto, method: :delete, data: { confirm: 'Deseja realmente excluir?' } %></td>
-      </tr>
+         </tr>
     <% end %>
   </tbody>
 </table>

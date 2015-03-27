@@ -25,6 +25,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap-sass', '~> 3.3.3'
 
+gem 'bootstrap_form'
+
+#Validação de CPF e  https://github.com/rfs/validates_cpf_cnpj
+gem 'validates_cpf_cnpj'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

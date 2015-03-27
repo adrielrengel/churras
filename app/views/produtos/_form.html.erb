@@ -12,28 +12,44 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :nome %><br>
-    <%= f.text_field :nome %>
+     <%= f.label :produto_id %>
+    <%= f.text_field :nome, class: "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :valor %><br>
-    <%= f.text_field :valor %>
+     <%= f.label :valor %>
+     <%= f.text_field :valor, class: "form-control" %>
   </div>
 
  
   <div class="field">
-    <%= f.label :unidade_nome %><br>
-    <%= f.text_field :unidade_nome %>
+     <%= f.label :unidade_nome %>
+     <%= f.text_field :unidade_nome, class: "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :categoria_produto_nome %><br>
-    <%= f.text_field :categoria_produto_nome %>
+     <%= f.label :categoria_produto_nome %>
+    <%= f.text_field :categoria_produto_nome, class: "form-control" %>
   </div>
+
   <div class="field">
-    <%= f.label :usuario_id %><br>
-    <%= f.text_field :usuario_id %>
+    <div>
+      <%= label_tag "Situação" %>
+    </div>
+    <label class="radio-inline">
+      <%= f.radio_button(:situacao, "ativo") %> Ativo
+    </label>
+    <label class="radio-inline">
+      <%= f.radio_button(:situacao, "inativo") %> Inativo
+    </label>
+  </div>
+
+  <br>
+
+  <div class="field">
+     <%= f.label :usuario_id %>
+    <%= f.text_field :usuario_id, class: "form-control" %>
   </div>
   <div class="actions">
+    <br>
     <%= f.submit %>
   </div>
 <% end %>

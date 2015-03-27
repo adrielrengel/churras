@@ -11,19 +11,103 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :pessoa_id %><br>
-    <%= f.text_field :pessoa_id %>
+  <div class="field form-group">
+    <%= f.label :pessoa_id %>
+    <%= f.text_field :pessoa_id, disabled: "disabled", class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :tipo %><br>
-    <%= f.text_field :tipo %>
+
+  <div class="field form-group">
+    
+
+  <script type="text/javascript">
+  $(function() {
+    $("#pessoa_fisica").change(function(evt) {
+      $("#pessoa_juridica_campos").slideUp();
+      $("#pessoa_fisica_campos").slideDown();
+    });
+
+    $("#pessoa_juridica").change(function(evt) {
+      $("#pessoa_fisica_campos").slideUp();
+      $("#pessoa_juridica_campos").slideDown();
+    });
+  });
+  </script>
+
+  <%= f.fields_for :pessoa do |p| %>
+    <div class="form-group">
+      <%= p.label :nome %>
+      <%= p.text_field :nome, class: "form-control" %>
+    </div>
+
+    <div class="field form-group">
+    <%= label_tag "Pessoa" %>
+    <label class="radio-inline">
+      <%= p.radio_button(:tipo, "PessoaFisica", id: "pessoa_fisica") %>Fisica
+    </label>
+    <label class="radio-inline">
+      <%= p.radio_button(:tipo, "PessoaJuridica", id: "pessoa_juridica") %>Juridica
+    </label>
   </div>
-    <div class="field">
-    <%= f.label :usuario_id %><br>
-    <%= f.text_field :usuario_id %>
+
+    <div id="pessoa_fisica_campos" style="display:<%= @cliente.pessoa.tipo == "PessoaFisica" ? "block" : "none" %>;">
+      <%= p.fields_for :pessoa_fisica do |pf| %>
+        <div class="form-group">
+          <%= pf.label :cpf %>
+          <%= pf.text_field :cpf, class: "form-control" %>
+        </div>
+      <% end %>
+    </div>
+
+    <div id="pessoa_juridica_campos" style="display:<%= @cliente.pessoa.tipo == "PessoaJuridica" ? "block" : "none" %>;">
+      <%= p.fields_for :pessoa_juridica do |pf| %>
+        <div class="form-group">
+          <%= pf.label :cnpj %>
+          <%= pf.text_field :cnpj, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= pf.label :razao_social %>
+          <%= pf.text_field :razao_social, class: "form-control" %>
+        </div>
+      <% end %>
+    </div>
+
+    <%= p.fields_for :endereco do |e| %>
+      <div class="field form-group">
+        <%= e.label 'Estado' %>
+        <%= e.select :uf_nome, ['AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS', 'MG', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO'], {}, { class: "form-control" }
+          %>
+      </div>
+      <div class="field form-group">
+        <%= e.label :cidade_nome %>
+        <%= e.text_field :cidade_nome, class: "form-control" %>
+      </div>
+      <div class="field form-group">
+        <%= e.label :rua_nome %>
+        <%= e.text_field :rua_nome, class: "form-control" %>
+      </div>
+      <div class="field form-group">
+        <%#= e.label :bairro_nome %>
+        <%#= e.text_field :bairro_nome, class: "form-control" %>
+      </div>
+      <div class="field form-group">
+        <%= e.label :complemento %>
+        <%= e.text_field :complemento, class: "form-control" %>
+      </div>
+      <div class="field form-group">
+        <%= e.label :numero %>
+        <%= e.text_field :numero, class: "form-control" %>
+      </div>
+    <% end %>
+  <% end %>
+
+  
+  
+  
+  <div class="field form-group">
+    <%= f.label :usuario_id %>
+    <%= f.text_field :usuario_id, class: "form-control" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions form-group">
+    <%= f.submit nil, class: "btn btn-default" %>
   </div>
 <% end %>
