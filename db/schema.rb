@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150326193245) do
+ActiveRecord::Schema.define(version: 20150420151546) do
 
   create_table "bairros", force: :cascade do |t|
     t.string  "nome",       limit: 255
@@ -168,11 +168,11 @@ ActiveRecord::Schema.define(version: 20150326193245) do
   add_index "item_pedidos", ["pedido_id"], name: "index_item_pedidos_on_pedido_id", using: :btree
   add_index "item_pedidos", ["usuario_id"], name: "index_item_pedidos_on_usuario_id", using: :btree
 
-  create_table "mesas", id: false, force: :cascade do |t|
+  create_table "mesas", force: :cascade do |t|
     t.string   "situacao",   limit: 20
-    t.integer  "id",         limit: 4,  null: false
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.integer  "pedido_id",  limit: 4
   end
 
   add_index "mesas", ["id"], name: "index_mesas_on_id", unique: true, using: :btree
@@ -214,13 +214,13 @@ ActiveRecord::Schema.define(version: 20150326193245) do
   add_index "pessoa_juridicas", ["usuario_id"], name: "index_pessoa_juridicas_on_usuario_id", using: :btree
 
   create_table "pessoas", force: :cascade do |t|
+    t.string   "tipo",        limit: 255
     t.string   "nome",        limit: 80
     t.integer  "endereco_id", limit: 4
     t.string   "situacao",    limit: 20
     t.integer  "usuario_id",  limit: 4
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
-    t.string   "tipo",        limit: 255
   end
 
   add_index "pessoas", ["endereco_id"], name: "index_pessoas_on_endereco_id", using: :btree

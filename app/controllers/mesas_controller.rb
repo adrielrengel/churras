@@ -78,9 +78,9 @@ class MesasController < ApplicationController
     Mesa.connection.execute("
       DELETE FROM mesas 
       WHERE 'livre' = ((
-  SELECT situacao FROM (
-    SELECT situacao FROM mesas ORDER BY id DESC LIMIT 1
-    ) as temp)
+        SELECT situacao FROM (
+          SELECT situacao FROM mesas ORDER BY id DESC LIMIT 1
+          ) as temp)
     )   ORDER BY id DESC LIMIT 1")
 
     respond_to do |format|

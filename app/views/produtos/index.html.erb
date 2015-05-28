@@ -23,9 +23,9 @@
       <tr>
         <td><%= produto.nome  %></td>
         <td><%= produto.valor %></td>
-        <td><%= produto.categoria_produto_nome rescue 'Categoria não encontrado' %></td>
+        <td><%= produto.categoria_produto_nome %></td>
         <td><%= produto.unidade_nome %></td>
-        <td><%= produto.situacao%></td>
+        <td><%= produto.situacao %></td>
         <td><%= produto.usuario.nome rescue 'Usuário não encontrado' %></td>
         <td><%= link_to 'Exibir', produto %></td>
         <td><%= link_to 'Editar', edit_produto_path(produto) %></td>

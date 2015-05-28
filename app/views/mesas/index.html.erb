@@ -5,12 +5,25 @@
 <% end %>
 <div class="row">
 	<% @mesas.each do |mesa| %>
-	<div class="col-md-2 col-sm-3 col-xs-6">
-		<div class="mesa <%= mesa.situacao %>">
-			<h2><%= mesa.id %></h2>
-			<p><%= mesa.situacao %></p>
+
+	<%
+		if mesa.situacao == 'ocupada'
+			link = pedido_path(mesa.pedido_id) 	#pedido_id foi criado para essa verificação
+			metodo = :get						#se a mesa estiver ocupada, vai direto no pedido
+		else
+			link = pedidos_path(:pedido=> {mesa_id: mesa.id}) 	#atribui um novo pedido a mesa
+			metodo = :post
+		end
+	%>
+
+	 <%= link_to link, method: metodo do %>
+		<div class="col-md-2 col-sm-3 col-xs-6">
+			<div class="mesa <%= mesa.situacao %>">
+				<h2><%= mesa.id %></h2>
+				<p><%= mesa.situacao %></p>
+			</div>
 		</div>
-	</div>
+		<% end %>
 	<% end %>
 </div>
 

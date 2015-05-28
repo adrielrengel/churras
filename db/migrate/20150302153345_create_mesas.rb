@@ -5,6 +5,6 @@ class CreateMesas < ActiveRecord::Migration
       t.integer :id, null: false
       t.timestamps null: false
     end
-    add_index :mesas, :id, unique: true
+    add_index :mesas, :id, unique: true, primary_key: true
   end
 end

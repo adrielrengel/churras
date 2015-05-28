@@ -25,9 +25,11 @@ class PedidosController < ApplicationController
   # POST /pedidos.json
   def create
     @pedido = Pedido.new(pedido_params)
-
     respond_to do |format|
       if @pedido.save
+        @pedido.mesa.pedido_id = @pedido.id
+        @pedido.mesa.situacao = "ocupada"
+        @pedido.mesa.save
         format.html { redirect_to @pedido, notice: 'Pedido was successfully created.' }
         format.json { render :show, status: :created, location: @pedido }
       else
@@ -71,4 +73,4 @@ class PedidosController < ApplicationController
     def pedido_params
       params.require(:pedido).permit(:mesa_id, :cliente_id, :desconto, :usuario_id)
     end
-end
+  end

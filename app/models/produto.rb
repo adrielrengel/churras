@@ -7,6 +7,7 @@ class Produto < ActiveRecord::Base
   #validaçoes dos campos
   validates :nome, :valor,  presence: true
   validates :valor, numericality: true
+  validates :categoria_produto_nome, presence: true
 
   #nomear os campos usando o nome ao inves do id
   def categoria_produto_nome  #stack level too deep \se ficar apenas o nome da tabela 
